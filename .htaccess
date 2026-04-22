@@ -1,0 +1,6 @@
+# Open PDFs in the browser (view) instead of forcing download when possible
+<IfModule mod_headers.c>
+	<FilesMatch "\.pdf$">
+		Header set Content-Disposition "inline"
+	</FilesMatch>
+</IfModule>

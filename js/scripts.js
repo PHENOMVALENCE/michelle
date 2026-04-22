@@ -1,4 +1,4 @@
-/* Michelle Mugo portfolio — navigation, forms, motion, and micro-interactions */
+/* Michelle Mugo portfolio — navigation, motion, and micro-interactions */
 (function ($) {
 	"use strict";
 
@@ -63,22 +63,6 @@
 		} else {
 			$("a.back-to-top").fadeOut(300);
 		}
-	});
-
-	$("#contactForm").on("submit", function (e) {
-		e.preventDefault();
-		var name = $.trim($("#cname").val());
-		var email = $.trim($("#cemail").val());
-		var message = $.trim($("#cmessage").val());
-		if (!name || !email || !message) {
-			return;
-		}
-		var subject = encodeURIComponent("Collaboration inquiry — " + name);
-		var body = encodeURIComponent(
-			"Name: " + name + "\nEmail: " + email + "\n\n" + message
-		);
-		window.location.href =
-			"mailto:mwmugo33@gmail.com?subject=" + subject + "&body=" + body;
 	});
 
 	$(".button, a, button").mouseup(function () {
@@ -230,7 +214,7 @@
 			return;
 		}
 		document
-			.querySelectorAll(".mm-btn-solid, .mm-btn-outline, .form-control-submit-button")
+			.querySelectorAll(".mm-btn-solid, .mm-btn-outline, .mm-btn-whatsapp")
 			.forEach(function (btn) {
 				btn.addEventListener("click", function (e) {
 					var rect = btn.getBoundingClientRect();

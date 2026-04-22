@@ -621,6 +621,40 @@ a:hover {
 	line-height: 1.7;
 	color: var(--mm-muted);
 	margin-bottom: 1.5rem;
+	max-width: 38rem;
+}
+
+.mm-contact-actions {
+	margin-left: -0.35rem;
+	margin-right: -0.35rem;
+}
+
+.mm-contact-action {
+	margin: 0.35rem;
+}
+
+.mm-btn-whatsapp {
+	background: #128c7e !important;
+	border: 1px solid #128c7e !important;
+	color: #ffffff !important;
+	box-shadow: 0 4px 16px rgba(18, 140, 126, 0.28);
+}
+
+.mm-btn-whatsapp:hover {
+	background: #0e7266 !important;
+	border-color: #0e7266 !important;
+	color: #ffffff !important;
+	box-shadow: 0 6px 22px rgba(12, 92, 82, 0.32);
+}
+
+.mm-section-contact .mm-btn-outline.mm-btn-contact-email {
+	border-color: var(--mm-primary);
+	color: var(--mm-primary) !important;
+}
+
+.mm-section-contact .mm-btn-outline.mm-btn-contact-email:hover {
+	background: var(--mm-primary);
+	color: var(--mm-cream) !important;
 }
 
 /* ---------- Cards ---------- */
@@ -1229,8 +1263,8 @@ a:hover {
 .mm-nav-link:focus-visible,
 .mm-btn-solid:focus-visible,
 .mm-btn-outline:focus-visible,
+.mm-btn-whatsapp:focus-visible,
 .mm-brand:focus-visible,
-.form-control-submit-button:focus-visible,
 a.back-to-top:focus-visible {
 	outline: 2px solid var(--mm-accent-light);
 	outline-offset: 3px;
