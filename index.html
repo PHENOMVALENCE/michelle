@@ -24,6 +24,7 @@
 </head>
 <body>
     <div class="mm-scroll-progress" aria-hidden="true"><span class="mm-scroll-progress-bar"></span></div>
+    <div class="mm-nav-backdrop" id="mmNavBackdrop" aria-hidden="true"></div>
 
     <nav class="navbar navbar-expand-lg fixed-top mm-navbar navbar-dark" id="mainNav" aria-label="Primary">
         <div class="container">
@@ -34,17 +35,23 @@
             <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas" aria-controls="navbarsPortfolio" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse offcanvas-collapse" id="navbarsPortfolio">
-                <ul class="navbar-nav ml-auto align-items-lg-center">
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsPortfolio" role="dialog" aria-modal="false" aria-label="Site menu">
+                <ul class="navbar-nav ml-auto align-items-lg-center mm-nav-list">
                     <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#impact">Impact</a></li>
                     <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#expertise">Expertise</a></li>
                     <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#cases">Work</a></li>
                     <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#speaking">Speaking</a></li>
+                    <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#testimonials">Endorsements</a></li>
                     <li class="nav-item"><a class="nav-link page-scroll mm-nav-link" href="#contact">Contact</a></li>
                     <li class="nav-item d-none d-lg-block pl-lg-3">
                         <a class="btn mm-btn mm-btn-sm mm-btn-solid page-scroll" href="#contact">Connect</a>
+                    </li>
+                    <li class="nav-item d-lg-none mm-nav-mobile-cta">
+                        <a class="btn mm-btn mm-btn-solid btn-block page-scroll mm-nav-connect-btn" href="#contact">Connect</a>
                     </li>
                 </ul>
             </div>
@@ -61,47 +68,73 @@
                 <span class="mm-blob mm-blob-c"></span>
             </div>
             <div class="mm-hero-noise" aria-hidden="true"></div>
-            <div class="container position-relative">
-                <div class="row align-items-center min-vh-100 mm-hero-row py-5">
+            <div class="mm-hero-gridline mm-hero-gridline--tl" aria-hidden="true"></div>
+            <div class="mm-hero-gridline mm-hero-gridline--br" aria-hidden="true"></div>
+            <div class="container position-relative mm-hero-container">
+                <div class="row align-items-start align-items-lg-center min-vh-100 mm-hero-row py-4 py-lg-5">
                     <div class="col-lg-7 order-2 order-lg-1 mm-reveal">
-                        <p class="mm-kicker text-uppercase mb-3">Dar es Salaam · East Africa</p>
-                        <h1 class="mm-display">Michelle Mugo</h1>
-                        <p class="mm-lead mb-4">Strategy and execution at the intersection of <strong>business development</strong>, <strong>marketing</strong>, <strong>program design</strong>, and <strong>organizational systems</strong>—turning institutional priorities into partnerships, revenue, and measurable reach.</p>
-                        <div class="d-flex flex-wrap mm-hero-cta mb-4">
-                            <a class="btn mm-btn mm-btn-solid page-scroll" href="#experience">View experience</a>
-                            <a class="btn mm-btn mm-btn-outline" href="Michelle%20Mugo%20Curriculum%20Vitae.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
-                            <a class="btn mm-btn mm-btn-ghost page-scroll" href="#contact">Contact</a>
+                        <div class="mm-hero-copy">
+                            <p class="mm-kicker text-uppercase mb-2 mb-md-3">Dar es Salaam · East Africa</p>
+                            <h1 class="mm-display mb-2">Michelle Mugo</h1>
+                            <p class="mm-hero-role mb-3 mb-md-4">Strategy, business development, marketing &amp; programs leadership—national scale, cross-sector partnerships, disciplined execution.</p>
+                            <p class="mm-lead mb-3 mb-md-4">Strategy and execution at the intersection of <strong>business development</strong>, <strong>marketing</strong>, <strong>program design</strong>, and <strong>organizational systems</strong>—turning institutional priorities into partnerships, revenue, and measurable reach.</p>
+                            <div class="d-flex flex-wrap mm-hero-cta mb-3 mb-md-4">
+                                <a class="btn mm-btn mm-btn-solid page-scroll" href="#experience">View experience</a>
+                                <a class="btn mm-btn mm-btn-outline" href="Michelle%20Mugo%20Curriculum%20Vitae.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
+                                <a class="btn mm-btn mm-btn-ghost page-scroll" href="#contact">Contact</a>
+                            </div>
+                            <blockquote class="mm-quote mb-0">
+                                <p>“I build the connective tissue between strategy, stakeholders, and delivery—so initiatives are resourced, governed, and built to last.”</p>
+                            </blockquote>
                         </div>
-                        <blockquote class="mm-quote mb-0">
-                            <p>“I build the connective tissue between strategy, stakeholders, and delivery—so initiatives are resourced, governed, and built to last.”</p>
-                        </blockquote>
                     </div>
-                    <div class="col-lg-5 order-1 order-lg-2 mb-5 mb-lg-0 mm-reveal">
-                        <div class="mm-profile-card mm-js-tilt mx-auto">
-                            <div class="mm-profile-frame">
-                                <div class="mm-profile-placeholder" role="img" aria-label="Professional portrait placeholder—replace with your photograph">
-                                    <span class="mm-profile-initials" aria-hidden="true">MM</span>
+                    <div class="col-lg-5 order-1 order-lg-2 mb-4 mb-md-5 mb-lg-0 mm-reveal">
+                        <div class="mm-profile-shell mx-auto">
+                            <div class="mm-profile-card mm-js-tilt">
+                                <div class="mm-profile-frame">
+                                    <div class="mm-profile-placeholder" role="img" aria-label="Professional portrait placeholder—replace with your photograph">
+                                        <span class="mm-profile-initials" aria-hidden="true">MM</span>
+                                    </div>
+                                </div>
+                                <div class="mm-profile-caption">
+                                    <span class="mm-profile-caption-name">Michelle Mugo</span>
+                                    <span class="mm-profile-caption-meta">Country-level leadership · Speaker &amp; moderator</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mm-credibility mm-reveal pb-5">
-                    <div class="col-6 col-md-3 mm-cred-item">
-                        <span class="mm-cred-value">TZS 71.5M</span>
-                        <span class="mm-cred-label">Sponsorship revenue secured</span>
+                <div class="mm-hero-ledger mm-reveal pb-4 pb-md-5">
+                    <div class="mm-hero-ledger-head">
+                        <span class="mm-hero-ledger-kicker">Evidence at a glance</span>
+                        <span class="mm-hero-ledger-note mm-hero-ledger-note--short d-md-none">National portfolios &amp; campaigns</span>
+                        <span class="mm-hero-ledger-note d-none d-md-inline">Selected outcomes from national portfolios and campaigns</span>
                     </div>
-                    <div class="col-6 col-md-3 mm-cred-item">
-                        <span class="mm-cred-value">100K+</span>
-                        <span class="mm-cred-label">Campaign impressions (B2C)</span>
-                    </div>
-                    <div class="col-6 col-md-3 mm-cred-item">
-                        <span class="mm-cred-value">8,000+</span>
-                        <span class="mm-cred-label">Registrations driven</span>
-                    </div>
-                    <div class="col-6 col-md-3 mm-cred-item">
-                        <span class="mm-cred-value">Cross-sector</span>
-                        <span class="mm-cred-label">Partnership leadership</span>
+                    <div class="row mm-credibility">
+                        <div class="col-12 col-sm-6 col-md-3 mm-cred-item">
+                            <div class="mm-cred-tile">
+                                <span class="mm-cred-value">TZS 71.5M</span>
+                                <span class="mm-cred-label">Sponsorship revenue secured</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 mm-cred-item">
+                            <div class="mm-cred-tile">
+                                <span class="mm-cred-value">100K+</span>
+                                <span class="mm-cred-label">Campaign impressions (B2C)</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 mm-cred-item">
+                            <div class="mm-cred-tile">
+                                <span class="mm-cred-value">8,000+</span>
+                                <span class="mm-cred-label">Registrations driven</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 mm-cred-item">
+                            <div class="mm-cred-tile">
+                                <span class="mm-cred-value">Cross-sector</span>
+                                <span class="mm-cred-label">Partnership leadership</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -161,11 +194,21 @@
                     <article class="mm-timeline-item mm-reveal">
                         <div class="mm-timeline-marker" aria-hidden="true"></div>
                         <div class="mm-timeline-card mm-card mm-card-pad mm-card-shine mm-js-tilt-card">
+                            <div class="mm-role-tags mb-2">
+                                <span class="mm-role-tag">National scope</span>
+                                <span class="mm-role-tag">Commercial &amp; programs</span>
+                                <span class="mm-role-tag mm-role-tag--accent">Current</span>
+                            </div>
                             <div class="d-flex flex-wrap justify-content-between align-items-baseline mm-flex-gaps mb-2">
                                 <h3 class="mm-h3 mb-0">Country Head, Business Development, Marketing &amp; Programs</h3>
                                 <span class="mm-badge">Aug 2024 – Present</span>
                             </div>
                             <p class="mm-role-meta mb-3"><strong>AIESEC in Tanzania</strong> · Dar es Salaam</p>
+                            <ul class="list-unstyled mm-outcome-strip mb-3" aria-label="Highlighted outcomes for this role">
+                                <li><span class="mm-outcome-strip-val">TZS 71.5M</span> <span class="mm-outcome-strip-lbl">sponsorship secured</span></li>
+                                <li><span class="mm-outcome-strip-val">100K+</span> <span class="mm-outcome-strip-lbl">B2C impressions · 8K registrations</span></li>
+                                <li><span class="mm-outcome-strip-val">400K+</span> <span class="mm-outcome-strip-lbl">BlueHeart impressions</span></li>
+                            </ul>
                             <p class="mb-3">Leads the national commercial, communications, and program delivery engine—redesigning how portfolios are executed while securing partnerships and revenue at scale.</p>
                             <ul class="mm-list mb-0">
                                 <li>Redesigned delivery models for the national program portfolio to improve clarity, accountability, and sponsor alignment.</li>
@@ -180,11 +223,18 @@
                     <article class="mm-timeline-item mm-reveal">
                         <div class="mm-timeline-marker" aria-hidden="true"></div>
                         <div class="mm-timeline-card mm-card mm-card-pad mm-card-shine mm-js-tilt-card">
+                            <div class="mm-role-tags mb-2">
+                                <span class="mm-role-tag mm-role-tag--soft">Advisory</span>
+                                <span class="mm-role-tag mm-role-tag--soft">Founder-facing</span>
+                            </div>
                             <div class="d-flex flex-wrap justify-content-between align-items-baseline mm-flex-gaps mb-2">
                                 <h3 class="mm-h3 mb-0">Independent Consultant — Sales, Marketing &amp; Growth Strategy</h3>
                                 <span class="mm-badge mm-badge-soft">Consulting</span>
                             </div>
                             <p class="mm-role-meta mb-3">Dar es Salaam</p>
+                            <ul class="list-unstyled mm-outcome-strip mm-outcome-strip--compact mb-3" aria-label="Highlighted outcomes for this role">
+                                <li><span class="mm-outcome-strip-val">15</span> <span class="mm-outcome-strip-lbl">agritech founders supported (KilimoTech)</span></li>
+                            </ul>
                             <p class="mb-3">Advises early-stage ventures on narrative, positioning, and go-to-market fundamentals—with a practical focus on founder readiness and channel fit.</p>
                             <ul class="mm-list mb-0">
                                 <li>Refined value propositions and market positioning for emerging startups.</li>
@@ -196,6 +246,9 @@
                     <article class="mm-timeline-item mm-reveal">
                         <div class="mm-timeline-marker" aria-hidden="true"></div>
                         <div class="mm-timeline-card mm-card mm-card-pad mm-card-shine mm-js-tilt-card">
+                            <div class="mm-role-tags mb-2">
+                                <span class="mm-role-tag mm-role-tag--soft">Regional advisory</span>
+                            </div>
                             <div class="d-flex flex-wrap justify-content-between align-items-baseline mm-flex-gaps mb-2">
                                 <h3 class="mm-h3 mb-0">Expansion Coach</h3>
                                 <span class="mm-badge">Nov 2023 – May 2024</span>
@@ -211,11 +264,18 @@
                     <article class="mm-timeline-item mm-reveal">
                         <div class="mm-timeline-marker" aria-hidden="true"></div>
                         <div class="mm-timeline-card mm-card mm-card-pad mm-card-shine mm-js-tilt-card">
+                            <div class="mm-role-tags mb-2">
+                                <span class="mm-role-tag mm-role-tag--soft">Team leadership</span>
+                                <span class="mm-role-tag mm-role-tag--soft">Marketing</span>
+                            </div>
                             <div class="d-flex flex-wrap justify-content-between align-items-baseline mm-flex-gaps mb-2">
                                 <h3 class="mm-h3 mb-0">Vice President, Marketing</h3>
                                 <span class="mm-badge">Feb 2023 – Jan 2024</span>
                             </div>
                             <p class="mm-role-meta mb-3"><strong>AIESEC in University of Nairobi</strong></p>
+                            <ul class="list-unstyled mm-outcome-strip mm-outcome-strip--compact mb-3" aria-label="Highlighted outcomes for this role">
+                                <li><span class="mm-outcome-strip-val">+27%</span> <span class="mm-outcome-strip-lbl">lead growth · team of 11</span></li>
+                            </ul>
                             <ul class="mm-list mb-0">
                                 <li>Led a team of <strong>11</strong>; increased leads by <strong>27%</strong>.</li>
                                 <li>Managed <strong>AIESEC Week</strong> with <strong>600+</strong> reach and <strong>268</strong> leads.</li>
@@ -227,6 +287,10 @@
                     <article class="mm-timeline-item mm-reveal">
                         <div class="mm-timeline-marker" aria-hidden="true"></div>
                         <div class="mm-timeline-card mm-card mm-card-pad mm-card-shine mm-js-tilt-card">
+                            <div class="mm-role-tags mb-2">
+                                <span class="mm-role-tag mm-role-tag--soft">Brand</span>
+                                <span class="mm-role-tag mm-role-tag--soft">Sponsorships</span>
+                            </div>
                             <div class="d-flex flex-wrap justify-content-between align-items-baseline mm-flex-gaps mb-2">
                                 <h3 class="mm-h3 mb-0">Team Lead, Brand Marketing</h3>
                                 <span class="mm-badge">Feb 2022 – Jan 2023</span>
@@ -244,63 +308,96 @@
         </section>
 
         <!-- Impact -->
-        <section id="impact" class="mm-section mm-section-dark" aria-labelledby="impact-heading">
+        <section id="impact" class="mm-section mm-section-dark mm-section-impact" aria-labelledby="impact-heading">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center mm-section-head mm-reveal">
+                    <div class="col-lg-9 text-center mm-section-head mm-reveal">
                         <p class="mm-kicker mm-kicker-on-dark">Impact</p>
                         <h2 id="impact-heading" class="mm-heading text-white">Evidence of scale</h2>
-                        <p class="mm-subhead mm-subhead-on-dark mx-auto">Selected quantitative outcomes from national campaigns, partnerships, and advisory engagements.</p>
+                        <p class="mm-subhead mm-subhead-on-dark mx-auto">Quantified outcomes grouped by mandate—commercial leadership, campaign performance, and advisory depth.</p>
                     </div>
                 </div>
-                <div class="row mt-5 mm-stagger mm-stagger-stats">
-                    <div class="col-6 col-md-4 col-lg-3 mm-reveal">
-                        <div class="mm-stat-card">
-                            <span class="mm-stat-prefix">TZS</span>
-                            <span class="mm-stat-num counter" data-target="71.5" data-decimals="1" data-suffix="M">0</span>
-                            <span class="mm-stat-label">Sponsorship revenue secured</span>
+                <div class="mm-impact-dashboard mt-5">
+                    <div class="mm-impact-band mm-reveal">
+                        <div class="mm-impact-band-head">
+                            <span class="mm-impact-band-index">01</span>
+                            <div>
+                                <h3 class="mm-impact-band-title">Revenue &amp; partnerships</h3>
+                                <p class="mm-impact-band-desc mb-0">Commercial outcomes from national sponsorship strategy and partner alignment.</p>
+                            </div>
+                        </div>
+                        <div class="row mm-stagger mm-stagger-stats">
+                            <div class="col-md-6 mm-reveal">
+                                <div class="mm-stat-card mm-stat-card--hero">
+                                    <span class="mm-stat-prefix">TZS</span>
+                                    <span class="mm-stat-num counter" data-target="71.5" data-decimals="1" data-suffix="M">0</span>
+                                    <span class="mm-stat-label">Sponsorship revenue secured</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3 mm-reveal">
-                        <div class="mm-stat-card">
-                            <span class="mm-stat-num counter" data-target="100" data-decimals="0" data-suffix="K+">0</span>
-                            <span class="mm-stat-label">B2C impressions (Career Fair)</span>
+                    <div class="mm-impact-band mm-reveal">
+                        <div class="mm-impact-band-head">
+                            <span class="mm-impact-band-index">02</span>
+                            <div>
+                                <h3 class="mm-impact-band-title">Campaign performance &amp; audience reach</h3>
+                                <p class="mm-impact-band-desc mb-0">Integrated marketing at scale—awareness, conversion, and professional-channel traction.</p>
+                            </div>
+                        </div>
+                        <div class="row mm-stagger mm-stagger-stats">
+                            <div class="col-6 col-lg-3 mm-reveal">
+                                <div class="mm-stat-card">
+                                    <span class="mm-stat-num counter" data-target="100" data-decimals="0" data-suffix="K+">0</span>
+                                    <span class="mm-stat-label">B2C impressions (Career Fair)</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3 mm-reveal">
+                                <div class="mm-stat-card">
+                                    <span class="mm-stat-num counter" data-target="400" data-decimals="0" data-suffix="K+">0</span>
+                                    <span class="mm-stat-label">Online impressions (BlueHeart)</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3 mm-reveal">
+                                <div class="mm-stat-card">
+                                    <span class="mm-stat-num counter" data-target="8000" data-decimals="0" data-suffix="">0</span>
+                                    <span class="mm-stat-label">Registrations driven</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3 mm-reveal">
+                                <div class="mm-stat-card">
+                                    <span class="mm-stat-num counter" data-target="17300" data-decimals="0" data-suffix="">0</span>
+                                    <span class="mm-stat-label">LinkedIn impressions</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4 col-lg-3 mm-reveal">
-                        <div class="mm-stat-card">
-                            <span class="mm-stat-num counter" data-target="400" data-decimals="0" data-suffix="K+">0</span>
-                            <span class="mm-stat-label">Online impressions (BlueHeart)</span>
+                    <div class="mm-impact-band mm-reveal">
+                        <div class="mm-impact-band-head">
+                            <span class="mm-impact-band-index">03</span>
+                            <div>
+                                <h3 class="mm-impact-band-title">Advisory outcomes &amp; leadership delivery</h3>
+                                <p class="mm-impact-band-desc mb-0">Founder advisory, marketing leadership metrics, and flagship event execution.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 mm-reveal">
-                        <div class="mm-stat-card">
-                            <span class="mm-stat-num counter" data-target="8000" data-decimals="0" data-suffix="">0</span>
-                            <span class="mm-stat-label">Registrations driven</span>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 mm-reveal">
-                        <div class="mm-stat-card">
-                            <span class="mm-stat-num counter" data-target="17300" data-decimals="0" data-suffix="">0</span>
-                            <span class="mm-stat-label">LinkedIn impressions</span>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 mm-reveal">
-                        <div class="mm-stat-card">
-                            <span class="mm-stat-num counter" data-target="15" data-decimals="0" data-suffix="">0</span>
-                            <span class="mm-stat-label">Founders advised (KilimoTech)</span>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 mm-reveal">
-                        <div class="mm-stat-card">
-                            <span class="mm-stat-num counter" data-target="27" data-decimals="0" data-suffix="%">0</span>
-                            <span class="mm-stat-label">Lead increase (VP Marketing)</span>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 mm-reveal">
-                        <div class="mm-stat-card">
-                            <span class="mm-stat-num counter" data-target="300" data-decimals="0" data-suffix="+">0</span>
-                            <span class="mm-stat-label">Event attendees (single flagship)</span>
+                        <div class="row mm-stagger mm-stagger-stats">
+                            <div class="col-6 col-md-4 mm-reveal">
+                                <div class="mm-stat-card">
+                                    <span class="mm-stat-num counter" data-target="15" data-decimals="0" data-suffix="">0</span>
+                                    <span class="mm-stat-label">Founders advised (KilimoTech)</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 mm-reveal">
+                                <div class="mm-stat-card">
+                                    <span class="mm-stat-num counter" data-target="27" data-decimals="0" data-suffix="%">0</span>
+                                    <span class="mm-stat-label">Lead increase (VP Marketing)</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 mm-reveal">
+                                <div class="mm-stat-card">
+                                    <span class="mm-stat-num counter" data-target="300" data-decimals="0" data-suffix="+">0</span>
+                                    <span class="mm-stat-label">Event attendees (single flagship)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -384,51 +481,115 @@
                 <div class="row mt-5 mm-stagger">
                     <div class="col-lg-6 mm-reveal mb-4">
                         <div class="mm-case mm-card mm-card-shine mm-js-tilt-card h-100">
+                            <div class="mm-case-top">
+                                <span class="mm-case-eyebrow">Portfolio &amp; governance</span>
+                                <h3 class="mm-h3 mb-0">National program portfolio redesign</h3>
+                            </div>
                             <div class="mm-case-body">
-                                <h3 class="mm-h3">National program portfolio redesign</h3>
-                                <p><span class="mm-case-label">Challenge</span> A national portfolio needed clearer delivery models and stronger alignment with partners and volunteers.</p>
-                                <p><span class="mm-case-label">Action</span> Led a structured redesign of how programs were packaged, governed, and communicated to internal and external stakeholders.</p>
-                                <p class="mb-0"><span class="mm-case-label">Result</span> A more sponsor-ready, operationally legible portfolio—supporting major revenue and partnership wins including <strong>TZS 71.5M</strong> secured and <strong>two PR partnerships</strong>.</p>
+                                <div class="mm-case-block mm-case-block--challenge">
+                                    <span class="mm-case-label">Challenge</span>
+                                    <p class="mb-0">A national portfolio needed clearer delivery models and stronger alignment with partners and volunteers.</p>
+                                </div>
+                                <div class="mm-case-block mm-case-block--action">
+                                    <span class="mm-case-label">Action</span>
+                                    <p class="mb-0">Led a structured redesign of how programs were packaged, governed, and communicated to internal and external stakeholders.</p>
+                                </div>
+                                <div class="mm-case-block mm-case-block--result">
+                                    <span class="mm-case-label">Result</span>
+                                    <p class="mb-0">A more sponsor-ready, operationally legible portfolio—supporting major revenue and partnership wins including <strong>TZS 71.5M</strong> secured and <strong>two PR partnerships</strong>.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 mm-reveal mb-4">
                         <div class="mm-case mm-card mm-card-shine mm-js-tilt-card h-100">
+                            <div class="mm-case-top">
+                                <span class="mm-case-eyebrow">Integrated campaign</span>
+                                <h3 class="mm-h3 mb-0">Career Fair 2026 campaign</h3>
+                            </div>
                             <div class="mm-case-body">
-                                <h3 class="mm-h3">Career Fair 2026 campaign</h3>
-                                <p><span class="mm-case-label">Challenge</span> Drive mass awareness and high-quality registrations for a flagship national fair.</p>
-                                <p><span class="mm-case-label">Action</span> Owned integrated marketing across B2C and professional channels with disciplined messaging and conversion-focused journeys.</p>
-                                <p class="mb-0"><span class="mm-case-label">Result</span> <strong>100,000+</strong> B2C impressions, <strong>8,000</strong> registrations, and <strong>17,300</strong> LinkedIn impressions.</p>
+                                <div class="mm-case-block mm-case-block--challenge">
+                                    <span class="mm-case-label">Challenge</span>
+                                    <p class="mb-0">Drive mass awareness and high-quality registrations for a flagship national fair.</p>
+                                </div>
+                                <div class="mm-case-block mm-case-block--action">
+                                    <span class="mm-case-label">Action</span>
+                                    <p class="mb-0">Owned integrated marketing across B2C and professional channels with disciplined messaging and conversion-focused journeys.</p>
+                                </div>
+                                <div class="mm-case-block mm-case-block--result">
+                                    <span class="mm-case-label">Result</span>
+                                    <p class="mb-0"><strong>100,000+</strong> B2C impressions, <strong>8,000</strong> registrations, and <strong>17,300</strong> LinkedIn impressions.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 mm-reveal mb-4">
                         <div class="mm-case mm-card mm-card-shine mm-js-tilt-card h-100">
+                            <div class="mm-case-top">
+                                <span class="mm-case-eyebrow">Cause-led visibility</span>
+                                <h3 class="mm-h3 mb-0">BlueHeart Project campaign</h3>
+                            </div>
                             <div class="mm-case-body">
-                                <h3 class="mm-h3">BlueHeart Project campaign</h3>
-                                <p><span class="mm-case-label">Challenge</span> Achieve standout visibility for a cause-led initiative in a crowded digital environment.</p>
-                                <p><span class="mm-case-label">Action</span> Spearheaded creative and distribution strategy tuned for shareability and brand-safe amplification.</p>
-                                <p class="mb-0"><span class="mm-case-label">Result</span> <strong>400,000+</strong> online impressions.</p>
+                                <div class="mm-case-block mm-case-block--challenge">
+                                    <span class="mm-case-label">Challenge</span>
+                                    <p class="mb-0">Achieve standout visibility for a cause-led initiative in a crowded digital environment.</p>
+                                </div>
+                                <div class="mm-case-block mm-case-block--action">
+                                    <span class="mm-case-label">Action</span>
+                                    <p class="mb-0">Spearheaded creative and distribution strategy tuned for shareability and brand-safe amplification.</p>
+                                </div>
+                                <div class="mm-case-block mm-case-block--result">
+                                    <span class="mm-case-label">Result</span>
+                                    <p class="mb-0"><strong>400,000+</strong> online impressions.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 mm-reveal mb-4">
                         <div class="mm-case mm-card mm-card-shine mm-js-tilt-card h-100">
+                            <div class="mm-case-top">
+                                <span class="mm-case-eyebrow">Accelerator advisory</span>
+                                <h3 class="mm-h3 mb-0">YEFFA KilimoTech Accelerator advisory</h3>
+                            </div>
                             <div class="mm-case-body">
-                                <h3 class="mm-h3">YEFFA KilimoTech Accelerator advisory</h3>
-                                <p><span class="mm-case-label">Challenge</span> Fifteen agritech founders needed sharper positioning and go-to-market clarity within an intensive accelerator cadence.</p>
-                                <p><span class="mm-case-label">Action</span> Delivered advisory on value proposition, market narrative, sales, and branding—tailored to early-stage constraints.</p>
-                                <p class="mb-0"><span class="mm-case-label">Result</span> Cohort-wide uplift in clarity and readiness to engage customers and partners (Sahara Accelerator / AGRA-supported program).</p>
+                                <div class="mm-case-block mm-case-block--challenge">
+                                    <span class="mm-case-label">Challenge</span>
+                                    <p class="mb-0">Fifteen agritech founders needed sharper positioning and go-to-market clarity within an intensive accelerator cadence.</p>
+                                </div>
+                                <div class="mm-case-block mm-case-block--action">
+                                    <span class="mm-case-label">Action</span>
+                                    <p class="mb-0">Delivered advisory on value proposition, market narrative, sales, and branding—tailored to early-stage constraints.</p>
+                                </div>
+                                <div class="mm-case-block mm-case-block--result">
+                                    <span class="mm-case-label">Result</span>
+                                    <p class="mb-0">Cohort-wide uplift in clarity and readiness to engage customers and partners (Sahara Accelerator / AGRA-supported program).</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-12 mm-reveal">
-                        <div class="mm-case mm-card mm-card-shine mm-js-tilt-card">
-                            <div class="mm-case-body">
-                                <h3 class="mm-h3">Tanzania Startup Week 2025</h3>
-                                <p><span class="mm-case-label">Challenge</span> Represent institutional credibility in a high-trust innovation forum.</p>
-                                <p><span class="mm-case-label">Action</span> Moderated a session, shaping dialogue for audience relevance and partner alignment.</p>
-                                <p class="mb-0"><span class="mm-case-label">Result</span> Visible national-level presence in Tanzania’s startup ecosystem—reinforcing thought leadership beyond day-to-day operations.</p>
+                        <div class="mm-case mm-case--featured mm-card mm-card-shine mm-js-tilt-card">
+                            <div class="row no-gutters align-items-stretch">
+                                <div class="col-lg-4 mm-case-feature-aside">
+                                    <span class="mm-case-eyebrow">National forum</span>
+                                    <h3 class="mm-h3 text-white mb-0">Tanzania Startup Week 2025</h3>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="mm-case-body mm-case-body--featured">
+                                        <div class="mm-case-block mm-case-block--challenge">
+                                            <span class="mm-case-label">Challenge</span>
+                                            <p class="mb-0">Represent institutional credibility in a high-trust innovation forum.</p>
+                                        </div>
+                                        <div class="mm-case-block mm-case-block--action">
+                                            <span class="mm-case-label">Action</span>
+                                            <p class="mb-0">Moderated a session, shaping dialogue for audience relevance and partner alignment.</p>
+                                        </div>
+                                        <div class="mm-case-block mm-case-block--result mb-0">
+                                            <span class="mm-case-label">Result</span>
+                                            <p class="mb-0">Visible national-level presence in Tanzania’s startup ecosystem—reinforcing thought leadership beyond day-to-day operations.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -558,7 +719,7 @@
         </section>
 
         <!-- Speaking -->
-        <section id="speaking" class="mm-section" aria-labelledby="speak-heading">
+        <section id="speaking" class="mm-section mm-section-soft" aria-labelledby="speak-heading">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5 mm-reveal mb-4 mb-lg-0">
@@ -591,22 +752,37 @@
                 </div>
                 <div class="row mt-4 mm-stagger">
                     <div class="col-md-4 mm-reveal mb-4">
-                        <div class="mm-testimonial mm-card mm-card-pad mm-card-shine mm-js-tilt-card h-100 text-center">
-                            <p class="mm-testimonial-text mb-3">“Michelle sets a clear bar for how national strategy shows up in the market—structured, credible, and accountable. She connects partnerships, communications, and program ambition in a way that strengthens the entity’s reputation and long-term direction.”</p>
-                            <p class="small text-muted mb-0"><strong>Dinna Laizer</strong> · Country Director, AIESEC in Tanzania</p>
-                        </div>
+                        <figure class="mm-testimonial mm-card mm-card-pad mm-card-shine mm-js-tilt-card h-100">
+                            <blockquote class="mm-testimonial-quote mb-0">
+                                <p>Michelle sets a clear bar for how national strategy shows up in the market—structured, credible, and accountable. She connects partnerships, communications, and program ambition in a way that strengthens the entity’s reputation and long-term direction.</p>
+                            </blockquote>
+                            <figcaption class="mm-testimonial-byline">
+                                <span class="mm-testimonial-name">Dinna Laizer</span>
+                                <span class="mm-testimonial-role">Country Director, AIESEC in Tanzania</span>
+                            </figcaption>
+                        </figure>
                     </div>
                     <div class="col-md-4 mm-reveal mb-4">
-                        <div class="mm-testimonial mm-card mm-card-pad mm-card-shine mm-js-tilt-card h-100 text-center">
-                            <p class="mm-testimonial-text mb-3">“From a finance standpoint, Michelle improved how we approach sponsorships and commercial conversations—clearer pipelines, cleaner handovers to finance, and stronger alignment between what we promise partners and how we record and govern it.”</p>
-                            <p class="small text-muted mb-0"><strong>Joshua Samwel</strong> · Head of Finance, AIESEC in Tanzania</p>
-                        </div>
+                        <figure class="mm-testimonial mm-card mm-card-pad mm-card-shine mm-js-tilt-card h-100">
+                            <blockquote class="mm-testimonial-quote mb-0">
+                                <p>From a finance standpoint, Michelle improved how we approach sponsorships and commercial conversations—clearer pipelines, cleaner handovers to finance, and stronger alignment between what we promise partners and how we record and govern it.</p>
+                            </blockquote>
+                            <figcaption class="mm-testimonial-byline">
+                                <span class="mm-testimonial-name">Joshua Samwel</span>
+                                <span class="mm-testimonial-role">Head of Finance, AIESEC in Tanzania</span>
+                            </figcaption>
+                        </figure>
                     </div>
                     <div class="col-md-4 mm-reveal mb-4">
-                        <div class="mm-testimonial mm-card mm-card-pad mm-card-shine mm-js-tilt-card h-100 text-center">
-                            <p class="mm-testimonial-text mb-3">“On programs and national campaigns, Michelle drives execution with unusual discipline—she translates priorities into timelines, owners, and measurable reach. Teams move faster because the operating model is legible, and stakeholders stay aligned from design through delivery.”</p>
-                            <p class="small text-muted mb-0"><strong>Maxmilian Furaha</strong> · National Programs &amp; Project Manager, AIESEC in Tanzania</p>
-                        </div>
+                        <figure class="mm-testimonial mm-card mm-card-pad mm-card-shine mm-js-tilt-card h-100">
+                            <blockquote class="mm-testimonial-quote mb-0">
+                                <p>On programs and national campaigns, Michelle drives execution with unusual discipline—she translates priorities into timelines, owners, and measurable reach. Teams move faster because the operating model is legible, and stakeholders stay aligned from design through delivery.</p>
+                            </blockquote>
+                            <figcaption class="mm-testimonial-byline">
+                                <span class="mm-testimonial-name">Maxmilian Furaha</span>
+                                <span class="mm-testimonial-role">National Programs &amp; Project Manager, AIESEC in Tanzania</span>
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -616,24 +792,27 @@
         <section id="contact" class="mm-section mm-section-contact" aria-labelledby="contact-heading">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center mm-section-head mm-reveal mb-4">
-                        <p class="mm-kicker">Contact</p>
-                        <h2 id="contact-heading" class="mm-heading">Let’s build what lasts</h2>
-                        <p class="mm-lead-contact mx-auto mb-0">Let’s build strategic partnerships, scalable programs, and high-impact growth initiatives—grounded in evidence, executed with care.</p>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center mm-reveal">
-                        <p class="text-muted mb-4"><i class="fas fa-map-marker-alt mr-2" aria-hidden="true"></i>Dar es Salaam, Tanzania</p>
-                        <div class="mm-contact-actions d-flex flex-wrap justify-content-center align-items-center">
-                            <a class="btn mm-btn mm-btn-whatsapp mm-contact-action" href="https://wa.me/255798239123?text=Hello%20Michelle%2C%0A%0AI%E2%80%99d%20like%20to%20connect%20regarding%20" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp mr-2" aria-hidden="true"></i>WhatsApp</a>
-                            <a class="btn mm-btn mm-btn-solid mm-contact-action" href="tel:+255798239123"><i class="fas fa-phone mr-2" aria-hidden="true"></i>Call</a>
-                            <a class="btn mm-btn mm-btn-outline mm-contact-action mm-btn-contact-email" href="mailto:mwmugo33@gmail.com?subject=Collaboration%20%E2%80%94%20Michelle%20Mugo"><i class="fas fa-envelope mr-2" aria-hidden="true"></i>Email</a>
-                            <a class="btn mm-btn mm-btn-outline mm-contact-action" href="https://www.linkedin.com/in/michelle-mugo/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in mr-2" aria-hidden="true"></i>LinkedIn</a>
-                        </div>
-                        <div class="mt-4 pt-2">
-                            <a class="btn mm-btn mm-btn-outline mm-contact-action mb-2" href="Michelle%20Mugo%20Curriculum%20Vitae.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf mr-2" aria-hidden="true"></i>View CV</a>
-                            <a class="btn mm-btn mm-btn-solid mm-contact-action mb-2 page-scroll" href="#experience"><i class="fas fa-briefcase mr-2" aria-hidden="true"></i>Review experience</a>
+                    <div class="col-xl-9">
+                        <div class="mm-contact-panel mm-reveal">
+                            <div class="text-center mm-section-head mm-contact-panel-head">
+                                <p class="mm-kicker">Contact</p>
+                                <h2 id="contact-heading" class="mm-heading">Let’s build what lasts</h2>
+                                <p class="mm-lead-contact mx-auto">Let’s build strategic partnerships, scalable programs, and high-impact growth initiatives—grounded in evidence, executed with care.</p>
+                                <p class="mm-contact-sub mx-auto mb-0">For national portfolios, partnership design, integrated campaigns, or advisory—share context and desired outcomes to align quickly.</p>
+                            </div>
+                            <div class="mm-contact-divider" aria-hidden="true"></div>
+                            <p class="text-center text-muted mb-4 mm-contact-loc"><i class="fas fa-map-marker-alt mr-2" aria-hidden="true"></i>Dar es Salaam, Tanzania</p>
+                            <div class="mm-contact-actions d-flex flex-wrap justify-content-center align-items-center">
+                                <a class="btn mm-btn mm-btn-solid mm-contact-action mm-contact-primary page-scroll" href="mailto:mwmugo33@gmail.com?subject=Collaboration%20%E2%80%94%20Michelle%20Mugo"><i class="fas fa-envelope mr-2" aria-hidden="true"></i>Email Michelle</a>
+                                <a class="btn mm-btn mm-btn-whatsapp mm-contact-action" href="https://wa.me/255798239123?text=Hello%20Michelle%2C%0A%0AI%E2%80%99d%20like%20to%20connect%20regarding%20" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp mr-2" aria-hidden="true"></i>WhatsApp</a>
+                                <a class="btn mm-btn mm-btn-outline mm-contact-action" href="tel:+255798239123"><i class="fas fa-phone mr-2" aria-hidden="true"></i>Call</a>
+                                <a class="btn mm-btn mm-btn-outline mm-contact-action" href="https://www.linkedin.com/in/michelle-mugo/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in mr-2" aria-hidden="true"></i>LinkedIn</a>
+                            </div>
+                            <p class="text-center small text-muted mm-contact-hint mb-0">Prefer a brief written brief? Email with context and desired outcomes—responses are prioritized for serious collaboration inquiries.</p>
+                            <div class="mm-contact-secondary d-flex flex-wrap justify-content-center align-items-center">
+                                <a class="btn mm-btn mm-btn-ghost mm-contact-action mb-2" href="Michelle%20Mugo%20Curriculum%20Vitae.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf mr-2" aria-hidden="true"></i>View CV</a>
+                                <a class="btn mm-btn mm-btn-ghost mm-contact-action mb-2 page-scroll" href="#experience"><i class="fas fa-briefcase mr-2" aria-hidden="true"></i>Review experience</a>
+                            </div>
                         </div>
                     </div>
                 </div>
