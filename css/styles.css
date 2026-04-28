@@ -897,6 +897,16 @@ body.mm-nav-open {
 	object-position: center 15%;
 }
 
+/* Wide event artwork/screenshots in speaking section */
+.mm-speaking-photo-img--wide {
+	aspect-ratio: 3 / 4;
+	max-height: 520px;
+	object-fit: contain;
+	object-position: center center;
+	background: linear-gradient(170deg, #0a1f3d 0%, #173e73 100%);
+	padding: 0.35rem;
+}
+
 @media (min-width: 768px) {
 	.mm-speaking-photo-img {
 		max-height: none;
