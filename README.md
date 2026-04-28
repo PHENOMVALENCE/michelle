@@ -14,15 +14,10 @@ Personal portfolio website for Michelle Mugo, built as a static HTML/CSS/JS site
 - `vercel.json`
   - `cleanUrls: true`
   - `trailingSlash: false`
-  - Rewrites:
-    - `/sitemap.xml` -> `/public/sitemap.xml`
-    - `/robots.txt` -> `/public/robots.txt`
 - Sitemap files:
-  - `public/sitemap.xml`
-  - `sitemap.xml` (root fallback)
+  - `sitemap.xml`
 - Robots files:
-  - `public/robots.txt`
-  - `robots.txt` (root fallback)
+  - `robots.txt`
 
 ## Local Development
 

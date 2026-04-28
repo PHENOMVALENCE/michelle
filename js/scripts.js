@@ -135,6 +135,42 @@
 		$(this).blur();
 	});
 
+	(function initCopyEmail() {
+		var btn = document.getElementById("copyEmailBtn");
+		var text = document.getElementById("copyEmailText");
+		if (!btn || !text) {
+			return;
+		}
+		var email = btn.getAttribute("data-email") || "";
+		if (!email) {
+			return;
+		}
+		btn.addEventListener("click", function () {
+			function setCopiedState() {
+				text.textContent = "Copied";
+				window.setTimeout(function () {
+					text.textContent = "Copy email";
+				}, 1600);
+			}
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				navigator.clipboard.writeText(email).then(setCopiedState);
+				return;
+			}
+			var area = document.createElement("textarea");
+			area.value = email;
+			area.setAttribute("readonly", "");
+			area.style.position = "absolute";
+			area.style.left = "-9999px";
+			document.body.appendChild(area);
+			area.select();
+			try {
+				document.execCommand("copy");
+				setCopiedState();
+			} catch (e) {}
+			document.body.removeChild(area);
+		});
+	})();
+
 	var sectionSelector = "main section[id], header[id]";
 	function updateActiveNav() {
 		var scrollPos = $(window).scrollTop() + getNavScrollOffset() + 32;
