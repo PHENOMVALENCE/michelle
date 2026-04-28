@@ -1,49 +1,49 @@
 /* Michelle Mugo — executive portfolio (Bootstrap 4.6 base) */
 
 :root {
-	/* Neutrals — ink & slate (cool, boardroom-ready) */
-	--mm-ink: #0f1419;
-	--mm-charcoal: #1a222c;
-	--mm-charcoal-soft: #2a3340;
-	--mm-muted: #5a6570;
-	--mm-muted-light: #8892a0;
+	/* Neutrals — deep blue slate */
+	--mm-ink: #081a32;
+	--mm-charcoal: #102746;
+	--mm-charcoal-soft: #1b3a62;
+	--mm-muted: #4f6483;
+	--mm-muted-light: #7f93af;
 
 	/* Surfaces */
 	--mm-white: #ffffff;
-	--mm-cream: #f5f3ef;
-	--mm-paper: #fafaf8;
-	--mm-sand: #e8e4dc;
-	--mm-surface-elevated: #f3f5f7;
+	--mm-cream: #eef4ff;
+	--mm-paper: #f4f8ff;
+	--mm-sand: #dfe9f8;
+	--mm-surface-elevated: #eaf1fc;
 
-	/* Brand — petrol teal + warm champagne (distinctive, not generic) */
-	--mm-primary: #1e4a50;
-	--mm-primary-deep: #153a3f;
-	--mm-primary-soft: #2a6168;
-	--mm-slate: #243240;
-	--mm-navy: #1c2834;
+	/* Brand — dark blue + fresh accent */
+	--mm-primary: #1f5fb0;
+	--mm-primary-deep: #133f7d;
+	--mm-primary-soft: #3a7ccc;
+	--mm-slate: #17345d;
+	--mm-navy: #0e2647;
 	--mm-forest: var(--mm-primary);
-	--mm-accent: #b8946a;
-	--mm-accent-light: #d4bc94;
-	--mm-accent-deep: #8f704d;
+	--mm-accent: #a8c94a;
+	--mm-accent-light: #d1eb68;
+	--mm-accent-deep: #7e9f2f;
 	--mm-gold: var(--mm-accent-deep);
 	--mm-gold-bright: var(--mm-accent-light);
 
 	/* Lines & glass */
-	--mm-line: rgba(22, 28, 36, 0.09);
-	--mm-line-strong: rgba(22, 28, 36, 0.14);
-	--mm-glass-dark: rgba(12, 17, 24, 0.88);
+	--mm-line: rgba(14, 33, 59, 0.1);
+	--mm-line-strong: rgba(14, 33, 59, 0.16);
+	--mm-glass-dark: rgba(7, 20, 38, 0.9);
 	--mm-glass-light: rgba(255, 255, 255, 0.97);
 
 	/* Hero atmosphere */
-	--mm-hero-mid: rgba(26, 48, 52, 0.94);
-	--mm-hero-edge: rgba(15, 22, 30, 0.96);
-	--mm-hero-glow: rgba(212, 188, 148, 0.16);
-	--mm-hero-floor: rgba(20, 58, 62, 0.42);
+	--mm-hero-mid: rgba(18, 47, 91, 0.96);
+	--mm-hero-edge: rgba(6, 17, 36, 0.98);
+	--mm-hero-glow: rgba(209, 235, 104, 0.2);
+	--mm-hero-floor: rgba(22, 71, 138, 0.48);
 
-	/* Shadows (tinted to brand, not flat gray) */
-	--mm-shadow: 0 24px 56px rgba(22, 40, 48, 0.12);
-	--mm-shadow-sm: 0 10px 32px rgba(22, 40, 48, 0.08);
-	--mm-shadow-glow: 0 0 0 1px rgba(184, 148, 106, 0.18), 0 28px 52px rgba(18, 42, 48, 0.14);
+	/* Shadows (tinted to blue palette) */
+	--mm-shadow: 0 24px 56px rgba(11, 33, 63, 0.16);
+	--mm-shadow-sm: 0 10px 32px rgba(11, 33, 63, 0.11);
+	--mm-shadow-glow: 0 0 0 1px rgba(157, 183, 79, 0.22), 0 28px 52px rgba(11, 33, 63, 0.2);
 
 	--mm-font-body: "DM Sans", system-ui, -apple-system, sans-serif;
 	--mm-font-display: "Cormorant Garamond", Georgia, serif;
@@ -69,8 +69,8 @@ body {
 	font-size: 1rem;
 	line-height: 1.7;
 	background:
-		radial-gradient(ellipse 100% 70% at 50% -15%, rgba(30, 74, 80, 0.045), transparent 52%),
-		radial-gradient(ellipse 80% 50% at 100% 0%, rgba(184, 148, 106, 0.04), transparent 45%),
+		radial-gradient(ellipse 100% 70% at 50% -15%, rgba(26, 79, 148, 0.06), transparent 52%),
+		radial-gradient(ellipse 80% 50% at 100% 0%, rgba(157, 183, 79, 0.05), transparent 45%),
 		var(--mm-paper);
 	-webkit-font-smoothing: antialiased;
 }
@@ -96,7 +96,7 @@ a:hover {
 }
 
 ::selection {
-	background: rgba(30, 74, 80, 0.2);
+	background: rgba(26, 79, 148, 0.22);
 	color: var(--mm-ink);
 }
 
@@ -159,6 +159,7 @@ a:hover {
 .mm-nav-link.active {
 	color: var(--mm-white) !important;
 	border-bottom-color: var(--mm-accent-light);
+	text-shadow: 0 0 14px rgba(209, 235, 104, 0.45);
 }
 
 .mm-navbar.top-nav-collapse .mm-nav-link.active {
@@ -378,13 +379,13 @@ body.mm-nav-open {
 	background: linear-gradient(165deg, var(--mm-primary-soft) 0%, var(--mm-primary) 45%, var(--mm-primary-deep) 100%);
 	border-color: transparent;
 	color: var(--mm-cream) !important;
-	box-shadow: 0 4px 16px rgba(21, 58, 63, 0.28);
+	box-shadow: 0 4px 16px rgba(9, 32, 66, 0.3);
 }
 
 .mm-btn-solid:hover {
-	background: linear-gradient(165deg, var(--mm-primary) 0%, var(--mm-primary-deep) 100%);
+	background: linear-gradient(165deg, var(--mm-primary-soft) 0%, var(--mm-primary-deep) 100%);
 	color: var(--mm-white) !important;
-	box-shadow: 0 8px 24px rgba(15, 42, 46, 0.35);
+	box-shadow: 0 8px 24px rgba(9, 32, 66, 0.4);
 }
 
 .mm-btn-outline {
@@ -922,7 +923,7 @@ body.mm-nav-open {
 	font-weight: 700;
 	letter-spacing: 0.18em;
 	text-transform: uppercase;
-	color: rgba(212, 188, 148, 0.88);
+	color: rgba(209, 235, 104, 0.9);
 }
 
 .mm-hero-ledger-note {
@@ -952,7 +953,7 @@ body.mm-nav-open {
 
 .mm-cred-tile:hover {
 	background: rgba(255, 255, 255, 0.07);
-	border-color: rgba(212, 188, 148, 0.28);
+	border-color: rgba(209, 235, 104, 0.32);
 	transform: translateY(-2px);
 }
 
@@ -996,17 +997,17 @@ body.mm-nav-open {
 }
 
 .mm-section-alt {
-	background: linear-gradient(188deg, #e4e9ee 0%, #efeae4 42%, #f7f5f2 100%);
+	background: linear-gradient(188deg, #e7effb 0%, #edf3fc 42%, #f6f9ff 100%);
 }
 
 .mm-section-soft {
-	background: linear-gradient(180deg, #f2f4f6 0%, #faf8f5 55%, #f7f5f2 100%);
+	background: linear-gradient(180deg, #ecf2fc 0%, #f4f8ff 55%, #f7faff 100%);
 	border-top: 1px solid var(--mm-line);
 	border-bottom: 1px solid var(--mm-line);
 }
 
 .mm-section-dark {
-	background: linear-gradient(168deg, #0f1620 0%, var(--mm-slate) 44%, #143a40 72%, #0e181c 100%);
+	background: linear-gradient(168deg, #07172f 0%, var(--mm-slate) 44%, #143b73 72%, #081a32 100%);
 	color: rgba(236, 234, 230, 0.9);
 	padding: clamp(4.25rem, 8vw, 6rem) 0;
 }
@@ -1031,7 +1032,7 @@ body.mm-nav-open {
 }
 
 .mm-section-contact {
-	background: linear-gradient(182deg, #f8f9fb 0%, var(--mm-paper) 45%, #eef1f4 100%);
+	background: linear-gradient(182deg, #f1f6ff 0%, var(--mm-paper) 45%, #e8f0fb 100%);
 	border-top: 1px solid var(--mm-line);
 }
 
@@ -1568,7 +1569,7 @@ body.mm-nav-open {
 
 .mm-stat-card:hover {
 	background: rgba(255, 255, 255, 0.08);
-	border-color: rgba(212, 188, 148, 0.28);
+	border-color: rgba(209, 235, 104, 0.32);
 	transform: translateY(-2px);
 }
 
@@ -1613,7 +1614,7 @@ body.mm-nav-open {
 	font-family: var(--mm-font-display);
 	font-size: 1.5rem;
 	font-weight: 600;
-	color: rgba(212, 188, 148, 0.55);
+	color: rgba(209, 235, 104, 0.62);
 	line-height: 1;
 	min-width: 2.25rem;
 }
@@ -2320,7 +2321,7 @@ a.back-to-top i {
 
 .footer.bg-gray,
 .copyright.bg-gray {
-	background: linear-gradient(180deg, #e4e8ec 0%, #ebe6df 100%) !important;
+	background: linear-gradient(180deg, #e4edfa 0%, #eaf2fd 100%) !important;
 }
 
 .footer .social-container a {
