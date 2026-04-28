@@ -1769,6 +1769,46 @@ body.mm-nav-open {
 	margin-bottom: 0.4rem;
 }
 
+.mm-proof-links {
+	display: grid;
+	gap: 0.55rem;
+}
+
+.mm-proof-links-label {
+	font-size: 0.68rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--mm-primary-deep);
+}
+
+.mm-proof-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.55rem 0.75rem;
+	border-radius: var(--mm-radius);
+	border: 1px solid rgba(19, 63, 125, 0.2);
+	background: rgba(255, 255, 255, 0.9);
+	color: var(--mm-primary-deep);
+	font-size: 0.85rem;
+	font-weight: 600;
+	line-height: 1.3;
+	width: fit-content;
+	max-width: 100%;
+}
+
+.mm-proof-link:hover {
+	background: rgba(209, 235, 104, 0.18);
+	border-color: rgba(126, 159, 47, 0.45);
+	color: var(--mm-primary-deep);
+}
+
+.mm-proof-link i {
+	font-size: 0.95rem;
+	color: var(--mm-primary);
+}
+
 .mm-case--featured {
 	overflow: hidden;
 }
