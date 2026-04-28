@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://michelle-mugo.vercel.app/sitemap.xml
+Sitemap: https://michellemugo.live/sitemap.xml
